@@ -1,0 +1,30 @@
+<html>
+<script>
+    function openIosApp() {
+
+        window.location = "SMSTO:1922&body=場所代碼：2060 4382 2471 476%0a本簡訊是簡訊實聯制發送， 限防疫目的使用。 ";
+    }
+
+    function openAndroidApp() {
+        window.location = "SMSTO:1922?body=場所代碼：2060 4382 2471 476%0a本簡訊是簡訊實聯制發送， 限防疫目的使用。 ";
+    }
+
+    function openApp() {
+        if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+            openIosApp();
+        } else if (navigator.userAgent.match(/Android/i)) {
+            openAndroidApp();
+        } else {
+            window.location = "SMSTO:1922?body=場所代碼：2060 4382 2471 476%0a本簡訊是簡訊實聯制發送， 限防疫目的使用。 ";
+        }
+    }
+</script>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body onload="openApp()">
+</body>
+
+</html>
